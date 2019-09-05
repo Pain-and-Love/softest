@@ -161,7 +161,7 @@ function displayLog(log) {
 }
 
 function handleConnection() {
-  const statementProxy = new WebSocket('ws://localhost:8080');
+  const statementProxy = new WebSocket('ws://127.0.0.1:8080');
   statementProxy.addEventListener('open', function (event) {
     console.log('connectd wss success!');
   });
