@@ -25,6 +25,7 @@ const newTab = new Event('targetcreated');
 const closeTab = new Event('targetdestroyed');
 const URLChange = new Event('targetchanged');
 const input = new Event('blur');
+const scroll = new Event('scroll');
 
 module.exports = {
   click,
@@ -33,4 +34,5 @@ module.exports = {
   closeTab,
   URLChange,
   input,
+  scroll,
 }

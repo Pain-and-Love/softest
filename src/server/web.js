@@ -12,6 +12,8 @@ const io = require('../utils/io');
 const proc = require('../utils/process');
 
 const argv = process.argv;
+console.log('web.js 接受到的参数 -> ', argv);
+
 const argHost = argv[2];
 const argPort = argv[3];
 const argChromium = argv[4];
@@ -43,6 +45,7 @@ app.get('/record', (_, res) => {
     io.deleteAllFile(argSavePath);
     io.deleteFile(archivePath);
     const recorder = child_process.spawn('node', [__basedir + '/../core/listener.js', argChromium]);
+    console.log('web.js recorder -> ', recorder);
     // mark recorder is running
     recorderPID = recorder.pid;
     proc.captureLog(recorder);

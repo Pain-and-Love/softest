@@ -26,8 +26,8 @@ function run(host, port, chromium, savePath) {
   // For wss.js and web.js, their relative paths are for index.js.
   const cliProxy = child_process.spawn('node', [__basedir + '/src/server/wss.js', '&']);
   proc.captureLog(cliProxy);
-  const cliRecoder = child_process.spawn('node', [__basedir + '/src/server/web.js', host, port, chromium, savePath]);
-  proc.captureLog(cliRecoder);
+  const cliRecorder = child_process.spawn('node', [__basedir + '/src/server/web.js', host, port, chromium, savePath]);
+  proc.captureLog(cliRecorder);
 
   console.log(`
  _______  _______  _______  _______  _______  _______  _______ 

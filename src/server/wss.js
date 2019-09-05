@@ -66,12 +66,13 @@ class WebSocketServer {
     });
     wss.on('connection', function connection(ws) {
       ws.on('message', function incoming(data) {
-        // console.log('received statement: %s', data);
+        console.log('ws 收到消息: %s', data);
         // boardcast
         wss.clients.forEach(function each(client) {
           if (client.readyState === WebSocket.OPEN) {
             try {
               client.send(data);
+              console.log('客户端 send 消息', data);
             } catch (e) {
               throw e;
             }
